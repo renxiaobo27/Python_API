@@ -8,5 +8,5 @@ def load_image_from_folder(path):
             if ext.lower() not in valid_file_ext:
                 continue
             filepath =os.path.join(root,filename)
-            imgs.append(filepath)
+            full_file_path.append(filepath)
     return full_file_path
