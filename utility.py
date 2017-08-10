@@ -9,9 +9,15 @@ def load_image_from_folder(path):
                 continue
             filepath =os.path.join(root,filename)
             full_file_path.append(filepath)
-            images_names.append(filename)
+            images_names.append(os.path.splitext(filename)[0])# without ext
     return full_file_path,images_names
 
+def make_sure_path_exists(path):
+    try:
+        os.makedirs(path)
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
 
 
 class ImageClass():
